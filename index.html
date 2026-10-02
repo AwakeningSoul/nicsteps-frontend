@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>NICSTEPS – Limited Edition Apparel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- LOADING OVERLAY -->
+  <div id="loader" class="loader-overlay">
+    <div class="loader-logo">NICSTEPS</div>
+  </div>
+
+<!-- LOGO -->
+<div style="text-align:center; margin-top:20px;">
+  <img src="images/logo.png" alt="NICSTEPS Logo" style="max-width:160px;">
+</div>
+  
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo">NICSTEPS</div>
+
+    <nav class="nav desktop-nav">
+      <a href="#shop">Shop</a>
+      <a href="#about">About</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <button id="mobile-menu-toggle" class="mobile-menu-toggle">
+      ☰
+    </button>
+
+    <div class="cart-icon" onclick="toggleCart()">
+      🛒 <span id="cart-count">0</span>
+    </div>
+  </header>
+
+  <!-- MOBILE MENU -->
+  <div id="mobile-menu" class="mobile-menu">
+    <nav class="mobile-nav">
+      <a href="#shop" onclick="closeMobileMenu()">Shop</a>
+      <a href="#about" onclick="closeMobileMenu()">About</a>
+      <a href="#faq" onclick="closeMobileMenu()">FAQ</a>
+      <a href="#contact" onclick="closeMobileMenu()">Contact</a>
+    </nav>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1 class="brand-title">NICSTEPS</h1>
+      <p class="brand-tagline">Daily walks. Daily life. Limited drops inspired by the journey.</p>
+      <a href="#shop" class="btn-primary">Shop the Drop</a>
+    </div>
+  </section>
+
+  <!-- DROP BANNER -->
+  <section class="drop-banner">
+    <h2>DROP 01 — LIMITED STOCK</h2>
+    <p>389 caps available across 4 colourways. Once they're gone, they're gone.</p>
+  </section>
+
+  <!-- SHOP SECTION -->
+  <section id="shop" class="shop">
+    <h2 class="section-title">Current Drop</h2>
+
+    <div id="drop-countdown" class="drop-countdown">
+      Drop ends in: <span id="countdown-timer">Loading...</span>
+    </div>
+
+    <div class="featured-box" id="featured-box">
+
+      <div class="carousel-arrow left-arrow" onclick="prevProduct()">
+        <span class="arrow-icon">❮</span>
+      </div>
+
+      <div class="featured-content">
+        <div class="featured-image-wrapper">
+          <img id="featured-img" src="" alt="Featured Cap">
+          <div id="stock-indicator" class="stock-indicator"></div>
+        </div>
+
+        <h3 id="featured-name"></h3>
+        <p class="price" id="featured-price">£34.99</p>
+
+        <div class="featured-gallery">
+          <img src="/images/model-male-black.jpg" onclick="openLightbox('/images/model-male-black.jpg')" alt="Male wearing black cap">
+          <img src="/images/model-male-multicam-black.jpg" onclick="openLightbox('/images/model-male-multicam-black.jpg')" alt="Male wearing multicam black cap">
+          <img src="/images/model-female-olive.jpg" onclick="openLightbox('/images/model-female-olive.jpg')" alt="Female wearing olive cap">
+          <img src="/images/model-female-royal-blue.jpg" onclick="openLightbox('/images/model-female-royal-blue.jpg')" alt="Female wearing royal blue cap">
+        </div>
+
+        <button class="btn-secondary" id="featured-btn">Select Options</button>
+      </div>
+
+      <div class="carousel-arrow right-arrow" onclick="nextProduct()">
+        <span class="arrow-icon">❯</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- IMAGE LIGHTBOX -->
+  <div id="image-lightbox" class="image-lightbox">
+    <img id="lightbox-img" src="" alt="Enlarged view">
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about" class="info-section">
+    <h2 class="section-title">About the Brand</h2>
+    <div class="info-card">
+      <p>
+        NICSTEPS is inspired by Nic’s daily walks, her life, and the moments she shares with her community.
+        Every drop is limited — once a design sells out, it’s never reprinted. Each cap is made to order
+        through trusted partners and shipped worldwide.
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="info-section">
+    <h2 class="section-title">FAQ</h2>
+
+    <div class="faq-card">
+      <h3>Where do you ship?</h3>
+      <p>UK, EU, Middle East, US, Canada, Australia, and most supported countries.</p>
+    </div>
+
+    <div class="faq-card">
+      <h3>Shipping time?</h3>
+      <p>Usually 5–14 days depending on country.</p>
+    </div>
+
+    <div class="faq-card">
+      <h3>Are drops limited?</h3>
+      <p>Yes. Once sold out, they never return.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="info-section">
+    <h2 class="section-title">Contact</h2>
+
+    <div class="info-card center">
+      <p>Email: <a href="mailto:orders@nicsteps.co.uk">orders@nicsteps.co.uk</a></p>
+
+      <div class="social-links">
+        <a href="https://www.instagram.com/xnatural_nicx" target="_blank">
+          <img src="icons/instagram.svg" alt="Instagram">
+        </a>
+
+        <a href="https://www.tiktok.com/@nicky32115" target="_blank">
+          <img src="icons/tiktok.svg" alt="TikTok">
+        </a>
+
+        <a href="https://www.snapchat.com/@ncurrah" target="_blank">
+          <img src="icons/snapchat.svg" alt="Snapchat">
+        </a>
+      </div>
+
+      <p class="support-text">Support my channels by subscribing ❤️</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2026 NICSTEPS. All rights reserved.</p>
+  </footer>
+
+  <!-- CART PANEL -->
+  <div id="cart-panel" class="cart-panel">
+    <div class="cart-header">
+      <h2>Your Basket</h2>
+      <button class="close-cart" onclick="toggleCart()">✖</button>
+    </div>
+
+    <div id="cart-items"></div>
+    <p id="cart-total">Total: £0.00</p>
+    <a id="checkout-link" href="#" class="btn-primary" onclick="openCheckout()">Checkout</a>
+  </div>
+
+  <!-- OPTIONS PANEL -->
+  <div id="options-panel" class="options-panel">
+    <h3>Select Colour & Size</h3>
+
+    <label>Colour</label>
+    <select id="opt-color">
+  <option>Black</option>
+  <option>Dark Grey</option>
+  <option>Dark Navy</option>
+  <option>Multicam Black</option>
+  <option>Olive</option>
+  <option>Red</option>
+  <option>Royal Blue</option>
+  <option>Khaki</option>
+  <option>White</option>
+  </select>
+
+    <label>Size</label>
+    <select id="opt-size">
+      <option>S/M</option>
+      <option>L/XL</option>
+    </select>
+
+    <div class="button-row">
+      <button class="btn-secondary" onclick="closeOptions()">Cancel</button>
+      <button class="btn-primary" onclick="addSelected()">Add to Cart</button>
+    </div>
+  </div>
+
+  <!-- CHECKOUT FORM -->
+  <div id="checkout-form" class="checkout-form">
+    <h2>Checkout</h2>
+
+    <label>Name</label>
+    <input type="text" id="cust-name" placeholder="Your full name">
+
+    <label>Email</label>
+    <input type="email" id="cust-email" placeholder="you@example.com" required>
+
+    <label>Address</label>
+    <input type="text" id="cust-address" placeholder="Street address">
+
+    <label>City</label>
+    <input type="text" id="cust-city" placeholder="City">
+
+    <label>State / Region (if required)</label>
+    <input type="text" id="cust-state" placeholder="CA, NY, TX, etc.">
+
+    <label>Postcode</label>
+    <input type="text" id="cust-zip" placeholder="Postcode">
+
+    <label>Country Code (GB, US, DE, AE, etc.)</label>
+    <input type="text" id="cust-country" placeholder="GB">
+
+    <div class="button-row">
+      <button class="btn-secondary" onclick="closeCheckout()">Cancel</button>
+      <button class="btn-primary" onclick="startCheckout()">Pay Now</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
