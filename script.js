@@ -608,7 +608,7 @@ function startCheckout() {
 }
 
 async function payNow(items, customerEmail) {
-  const response = await fetch("http://localhost:3000/create-checkout-session", {
+  const response = await fetch("https://nicsteps-backend-production.up.railway.app/create-checkout-session", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ items, customerEmail })
