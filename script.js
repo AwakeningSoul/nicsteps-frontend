@@ -449,7 +449,7 @@ function initCountdown() {
 
   // Set drop end date (adjust as you like)
   const dropEnd = new Date();
-  dropEnd.setDate(dropEnd.getDate() + 7); // 7 days from now
+  dropEnd.setDate(dropEnd.getDate() + 32); // 32 days from now
 
   function updateCountdown() {
     const now = new Date();
