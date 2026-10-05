@@ -448,6 +448,82 @@ footer a[href*="netlify.com"] {
   color: #ff6b6b;
   cursor: pointer;
 }
+/* ----------------------------- */
+/* TIP SECTION INSIDE CART PANEL */
+/* ----------------------------- */
+
+.tip-section {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 8px;
+  background: #0b0d12;
+  color: #fff;
+  border: 1px solid #1f2937;
+}
+
+.tip-section h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tip-optional {
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
+
+.tip-buttons {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.tip-btn {
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid #374151;
+  background: #111827;
+  color: #fff;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, transform 0.1s;
+}
+
+.tip-btn:hover {
+  background: #1f2937;
+  border-color: #4b5563;
+  transform: translateY(-1px);
+}
+
+.tip-btn.active {
+  background: #2563eb;
+  border-color: #3b82f6;
+}
+
+.tip-custom {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.tip-custom input {
+  width: 80px;
+  padding: 0.3rem 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #374151;
+  background: #020617;
+  color: #fff;
+}
+
+.tip-summary {
+  font-size: 0.9rem;
+  color: #d1d5db;
+  margin-top: 0.5rem;
+}
 
 /* OPTIONS PANEL */
 .options-panel {
