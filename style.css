@@ -119,6 +119,11 @@ body {
   font-size: 1.1rem;
 }
 
+.mobile-menu {
+  height: 100vh;
+  z-index: 9999;
+}
+
 /* HERO */
 .hero {
   padding: 5rem 2rem;
