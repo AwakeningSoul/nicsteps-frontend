@@ -525,6 +525,21 @@ footer a[href*="netlify.com"] {
   margin-top: 0.5rem;
 }
 
+.tip-remove-btn {
+  margin-top: 8px;
+  background: #444;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.tip-remove-btn:hover {
+  background: #555;
+}
+
 /* OPTIONS PANEL */
 .options-panel {
   display: none;
