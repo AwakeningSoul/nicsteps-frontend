@@ -477,30 +477,46 @@ body {
   }
 }
 
-/* LIGHTBOX */
+/* FULLSCREEN IMAGE LIGHTBOX */
 .image-lightbox {
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   background: rgba(0,0,0,0.85);
   display: none;
   justify-content: center;
   align-items: center;
-  z-index: 99999;
+  z-index: 9999;
+  padding: 20px;
 }
 
 .image-lightbox img {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 12px;
-  box-shadow: 0 0 25px rgba(0,0,0,0.5);
-  animation: lightboxFade 0.25s ease;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+  animation: zoomIn 0.25s ease-out;
 }
 
-@keyframes lightboxFade {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
+#lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  z-index: 10000;
 }
 
+@keyframes zoomIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* Social links */
 .social-links img {
   width: 40px;
   height: 40px;
