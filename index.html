@@ -179,35 +179,40 @@
 </footer>
 
   <!-- CART PANEL -->
-  <div id="cart-panel" class="cart-panel">
-    <div class="cart-header">
-      <h2>Your Basket</h2>
-      <button class="close-cart" onclick="toggleCart()">✖</button>
+<div id="cart-panel" class="cart-panel">
+  <div class="cart-header">
+    <h2>Your Basket</h2>
+    <button class="close-cart" onclick="toggleCart()">✖</button>
+  </div>
+
+  <div id="cart-items"></div>
+
+  <!-- Basket total -->
+  <p id="cart-total">Total: £0.00</p>
+
+  <!-- ⭐ TIP SECTION MOVED INSIDE CART PANEL -->
+  <div class="tip-section">
+    <h3>Support NIC ❤️ <span class="tip-optional">(optional)</span></h3>
+
+    <div class="tip-buttons">
+      <button class="tip-btn" data-tip="5">+5%</button>
+      <button class="tip-btn" data-tip="10">+10%</button>
+      <button class="tip-btn" data-tip="15">+15%</button>
     </div>
 
-    <div id="cart-items"></div>
-    <p id="cart-total">Total: £0.00</p>
-    <a id="checkout-link" href="#" class="btn-primary" onclick="openCheckout()">Checkout</a>
+    <div class="tip-custom">
+      <label for="customTip">Custom %</label>
+      <input type="number" id="customTip" min="1" max="100" placeholder="e.g. 7">
+      <button id="applyCustomTip" class="tip-btn">Apply</button>
+    </div>
+
+    <div class="tip-summary">
+      <p>Tip NIC ❤️: <span id="tipAmountDisplay">£0.00</span></p>
+    </div>
   </div>
 
-  <div class="tip-section">
-  <h3>Support NIC ❤️ <span class="tip-optional">(optional)</span></h3>
-
-  <div class="tip-buttons">
-    <button class="tip-btn" data-tip="5">+5%</button>
-    <button class="tip-btn" data-tip="10">+10%</button>
-    <button class="tip-btn" data-tip="15">+15%</button>
-  </div>
-
-  <div class="tip-custom">
-    <label for="customTip">Custom %</label>
-    <input type="number" id="customTip" min="1" max="100" placeholder="e.g. 7">
-    <button id="applyCustomTip" class="tip-btn">Apply</button>
-  </div>
-
-  <div class="tip-summary">
-    <p>Tip NIC ❤️: <span id="tipAmountDisplay">£0.00</span></p>
-  </div>
+  <!-- Checkout button -->
+  <a id="checkout-link" href="#" class="btn-primary" onclick="openCheckout()">Checkout</a>
 </div>
 
   <!-- OPTIONS PANEL -->
