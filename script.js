@@ -447,29 +447,29 @@ function initCountdown() {
   const timerEl = document.getElementById("countdown-timer");
   if (!timerEl) return;
 
-  // Set drop end date (adjust as you like)
-  const dropEnd = new Date();
-  dropEnd.setDate(dropEnd.getDate() + 32); // 32 days from now
+// Set fixed drop end date
+const dropEnd = new Date("2024-11-30T23:59:00");
 
-  function updateCountdown() {
-    const now = new Date();
-    const diff = dropEnd - now;
+// Update countdown
+function updateCountdown() {
+  const now = new Date();
+  const diff = dropEnd - now;
 
-    if (diff <= 0) {
-      timerEl.textContent = "Drop ended";
-      return;
-    }
-
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-    const minutes = Math.floor((diff / (1000 * 60)) % 60);
-
-    timerEl.textContent = `${days}d ${hours}h ${minutes}m`;
+  if (diff <= 0) {
+    timerEl.textContent = "Drop ended";
+    return;
   }
 
-  updateCountdown();
-  setInterval(updateCountdown, 60000);
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((diff / (1000 * 60)) % 60);
+
+  timerEl.textContent = `${days}d ${hours}h ${minutes}m`;
 }
+
+updateCountdown();
+setInterval(updateCountdown, 60000);
+
 
 // =========================
 // LOADER
