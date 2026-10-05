@@ -64,7 +64,7 @@ body {
 
 /* MOBILE MENU TOGGLE */
 .mobile-menu-toggle {
-  display: none;
+  display: none;               /* hidden on desktop */
   background: transparent;
   border: none;
   color: #f5f5f5;
@@ -93,17 +93,17 @@ body {
 /* MOBILE MENU */
 .mobile-menu {
   position: fixed;
-  top: -100%;
+  top: -100%;                  /* hidden above screen */
   left: 0;
   right: 0;
   background: #050608;
   padding: 2rem 1.5rem;
-  transition: top 0.3s ease;
-  z-index: 9999; /* important */
+  transition: top 0.3s ease;   /* slide down animation */
+  z-index: 9999;               /* above everything */
 }
 
 .mobile-menu.open {
-  top: 60px; /* match your header height */
+  top: 60px;                   /* slides down below header */
 }
 
 .mobile-nav {
@@ -119,9 +119,15 @@ body {
   font-size: 1.1rem;
 }
 
-.mobile-menu {
-  height: 100vh;
-  z-index: 9999;
+/* SHOW MOBILE MENU TOGGLE ON MOBILE */
+@media (max-width: 768px) {
+  .mobile-menu-toggle {
+    display: block;            /* ☰ becomes visible */
+  }
+
+  .desktop-nav {
+    display: none;             /* hide desktop nav */
+  }
 }
 
 /* HERO */
