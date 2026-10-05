@@ -365,6 +365,13 @@ body {
   margin-top: 3rem;
 }
 
+#netlify-badge,
+.netlify-badge,
+[data-netlify-badge],
+footer a[href*="netlify.com"] {
+  display: none !important;
+}
+
 /* CART PANEL */
 .cart-panel {
   position: fixed;
