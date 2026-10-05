@@ -654,7 +654,6 @@ window.addEventListener("load", () => {
   currentProductIndex = 0;
   setFeatured(CAP_PRODUCTS[currentProductIndex]);
   initSwipe();
-  initMobileMenu();
- initCountdown();
+  initCountdown();
   hideLoader();
 });
