@@ -93,17 +93,17 @@ body {
 /* MOBILE MENU */
 .mobile-menu {
   position: fixed;
+  top: -100%;
   left: 0;
   right: 0;
-  bottom: -100%;
   background: #050608;
   padding: 2rem 1.5rem;
-  transition: bottom 0.3s ease;
+  transition: top 0.3s ease;
   z-index: 20;
 }
 
 .mobile-menu.open {
-  bottom: 0;
+  top: 60px; /* match your header height */
 }
 
 .mobile-nav {
@@ -118,6 +118,7 @@ body {
   text-decoration: none;
   font-size: 1.1rem;
 }
+
 
 /* HERO */
 .hero {
