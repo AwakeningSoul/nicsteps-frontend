@@ -397,23 +397,40 @@ function closeMobileMenu() {
   if (!menu) return;
   menu.classList.remove("open");
 }
+initMobileMenu();
 
 // =========================
-// IMAGE LIGHTBOX
+// IMAGE LIGHTBOX (FULLSCREEN ZOOM)
 // =========================
 
+const lightbox = document.getElementById("image-lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const lightboxClose = document.getElementById("lightbox-close");
+
+// Open lightbox from gallery thumbnails
 function openLightbox(src) {
-  const lightbox = document.getElementById("image-lightbox");
-  const img = document.getElementById("lightbox-img");
+  lightboxImg.src = src;
+  lightbox.style.display = "flex";
+}
 
-  if (!lightbox || !img) return;
+// Close button
+lightboxClose.addEventListener("click", () => {
+  lightbox.style.display = "none";
+});
 
-  img.src = src;
-  lightbox.classList.add("open");
+// Click outside image closes lightbox
+lightbox.addEventListener("click", (e) => {
+  if (e.target === lightbox) {
+    lightbox.style.display = "none";
+  }
+});
 
-  lightbox.onclick = () => {
-    lightbox.classList.remove("open");
-  };
+// Also allow featured image to open fullscreen
+const featuredImg = document.getElementById("featured-img");
+if (featuredImg) {
+  featuredImg.addEventListener("click", () => {
+    openLightbox(featuredImg.src);
+  });
 }
 
 // =========================
