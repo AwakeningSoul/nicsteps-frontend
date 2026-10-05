@@ -363,6 +363,7 @@ body {
   padding: 2rem;
   background: #0b0d12;
   margin-top: 3rem;
+  color: #fff;
 }
 
 #netlify-badge,
@@ -372,12 +373,20 @@ footer a[href*="netlify.com"] {
   display: none !important;
 }
 
+.footer p {
+  color: #fff;
+  margin-bottom: 0.5rem;
+  opacity: 0.9;
+}
+
 .footer-legal {
   margin-top: 10px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 10px;
 }
 
 .footer-legal a {
@@ -392,11 +401,14 @@ footer a[href*="netlify.com"] {
   opacity: 1;
 }
 
-.footer-legal {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding-top: 10px;
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-
+.footer p {
+  margin-bottom: 1rem;
+}
 
 /* CART PANEL */
 .cart-panel {
