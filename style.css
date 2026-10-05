@@ -373,42 +373,30 @@ footer a[href*="netlify.com"] {
 }
 
 .footer-legal {
-  margin-top: 20px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
 }
 
 .footer-legal a {
-  display: block;
-  margin-top: 6px;
+  color: #fff;
   font-size: 0.9rem;
   opacity: 0.8;
   text-decoration: none;
+  transition: opacity 0.2s ease;
 }
 
 .footer-legal a:hover {
   opacity: 1;
 }
 
-.legal-page {
-  background: #fff;
-  padding: 40px 20px;
+.footer-legal {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 10px;
 }
 
-.legal-container {
-  max-width: 800px;
-  margin: 0 auto;
-  font-family: inherit;
-  line-height: 1.6;
-}
-
-.legal-container h1 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-
-.legal-container h2 {
-  margin-top: 30px;
-  font-size: 1.3rem;
-}
 
 /* CART PANEL */
 .cart-panel {
