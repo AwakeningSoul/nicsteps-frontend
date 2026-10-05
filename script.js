@@ -493,6 +493,41 @@ if (applyCustomTipBtn && customTipInput) {
 }
 
 // =========================
+// ⭐ REMOVE TIP BUTTON
+// =========================
+
+if (removeTipBtn) {
+  removeTipBtn.addEventListener("click", () => {
+
+    // Reset tip values
+    tipPercent = 0;
+    tipAmountInPence = 0;
+
+    // Clear active states on preset buttons
+    setActiveTipButton(null);
+
+    // Clear custom input
+    if (customTipInput) customTipInput.value = "";
+
+    // Reset tip display
+    if (tipAmountDisplay) {
+      tipAmountDisplay.textContent = "£0.00";
+    }
+
+    // Recalculate cart total WITHOUT tip
+    const subtotal = getSubtotal();
+    const cartTotalP = document.getElementById("cart-total");
+    if (cartTotalP) {
+      cartTotalP.textContent = `Total: £${subtotal.toFixed(2)}`;
+    }
+  });
+}
+
+// =========================
+// ⭐ TIP SYSTEM END
+// =========================
+
+// =========================
 // ⭐ TIP SYSTEM END
 // =========================
 
