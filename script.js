@@ -448,7 +448,7 @@ function initCountdown() {
   if (!timerEl) return;
 
   // Set fixed drop end date
-  const dropEnd = new Date("2026-11-30T23:59:00");
+  const dropEnd = new Date("2026-10-31T23:59:00");
 
   // Update countdown
   function updateCountdown() {
