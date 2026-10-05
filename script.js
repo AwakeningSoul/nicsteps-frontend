@@ -532,6 +532,39 @@ if (removeTipBtn) {
 // =========================
 
 // =========================
+// PRODUCT DETAILS TOGGLE
+// =========================
+
+const infoToggleBtn = document.getElementById("infoToggleBtn");
+const infoPanel = document.getElementById("infoPanel");
+
+if (infoToggleBtn && infoPanel) {
+  infoToggleBtn.addEventListener("click", () => {
+    infoPanel.classList.toggle("open");
+
+    // Change button text depending on state
+    if (infoPanel.classList.contains("open")) {
+      infoToggleBtn.textContent = "Hide Product Details";
+    } else {
+      infoToggleBtn.textContent = "Product Details";
+    }
+  });
+}
+
+// =========================
+// TAP OUTSIDE TO CLOSE PANEL
+// =========================
+
+document.addEventListener("click", (e) => {
+  if (!infoPanel.contains(e.target) && !infoToggleBtn.contains(e.target)) {
+    if (infoPanel.classList.contains("open")) {
+      infoPanel.classList.remove("open");
+      infoToggleBtn.textContent = "Product Details";
+    }
+  }
+});
+
+// =========================
 // SWIPE SUPPORT
 // Enables swipe left/right on mobile to change featured product.
 // =========================
