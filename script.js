@@ -397,7 +397,11 @@ function closeMobileMenu() {
   if (!menu) return;
   menu.classList.remove("open");
 }
-initMobileMenu();
+
+// ⭐ FIX: Run only after the HTML is fully loaded
+document.addEventListener("DOMContentLoaded", () => {
+  initMobileMenu();
+});
 
 // =========================
 // IMAGE LIGHTBOX (FULLSCREEN ZOOM)
