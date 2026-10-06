@@ -858,11 +858,11 @@ function startCheckout() {
 
   // Build Stripe items (name, quantity, price in pence, variant_id)
   const stripeItems = cart.map(item => ({
-    name: `${item.name} (${item.color}, ${item.size})`,
+    name: `${item.name} - ${item.color} - ${item.size}`,  // ⭐ CLEAN NAME
     quantity: item.quantity,
-    price: Math.round(item.price * 100), // convert pounds → pence
+    price: Math.round(item.price * 100),
     variant_id: item.variant_id
-  }));
+}));
 
   // Build orderData for localStorage (used for confirmation page, etc.)
   const orderData = {
