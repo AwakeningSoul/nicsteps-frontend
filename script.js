@@ -6,7 +6,7 @@ console.log("SCRIPT LOADED");
 
 const PRODUCTS = {
   "Multicam Black": {
-    price: 00.99,
+    price: 34.99,
     stock: 50,
     image: "images/multicam-black.png",
     variants: {
