@@ -877,7 +877,8 @@ function startCheckout() {
   localStorage.setItem("orderData", JSON.stringify(orderData));
 
   // Start payment with Stripe items and customer email
-  payNow(stripeItems, email);
+console.log("STRIPE ITEMS SENT TO BACKEND:", stripeItems);
+payNow(stripeItems, email);
 }
 
 // Call backend to create Stripe checkout session
