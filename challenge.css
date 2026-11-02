@@ -1,0 +1,521 @@
+
+:root {
+  --paper: #f3f1eb;
+  --ink: #171b1b;
+  --dark: #151b1b;
+  --accent: #c6d2ca;
+  --muted: #777d78;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "DM Sans", Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.challenge-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 7%;
+  border-bottom: 1px solid rgba(23, 27, 27, 0.12);
+}
+
+.brand {
+  color: var(--ink);
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+}
+
+.back-link {
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.challenge-hero {
+  min-height: 560px;
+  padding: 110px 8%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background: var(--dark);
+  color: var(--paper);
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+}
+
+.challenge-hero h1 {
+  max-width: 850px;
+  margin: 18px 0;
+  font-family: Georgia, serif;
+  font-size: clamp(3rem, 8vw, 6.5rem);
+  font-weight: 400;
+  line-height: 1.02;
+}
+
+.hero-text {
+  max-width: 500px;
+  color: #d0d4d0;
+  font-size: 1.15rem;
+}
+
+.primary-button {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 15px 28px;
+  background: var(--accent);
+  color: var(--dark);
+  text-decoration: none;
+  font-weight: 700;
+  transition: opacity 0.2s ease;
+}
+
+.primary-button:hover {
+  opacity: 0.8;
+}
+
+.challenge-intro,
+.join-section,
+.leaderboard-section {
+  max-width: 1100px;
+  margin: auto;
+  padding: 85px 7%;
+}
+
+.challenge-intro h2,
+.join-section h2,
+.leaderboard-section h2 {
+  font-family: Georgia, serif;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.challenge-intro p,
+.join-section p,
+.leaderboard-section > p {
+  max-width: 650px;
+  color: var(--muted);
+}
+
+.join-section {
+  max-width: none;
+  background: var(--accent);
+}
+
+.join-section p {
+  color: var(--ink);
+}
+
+.join-section .primary-button {
+  background: var(--dark);
+  color: var(--paper);
+}
+
+.leaderboard-section {
+  min-height: 300px;
+}
+
+.challenge-footer {
+  padding: 30px 7%;
+  background: var(--dark);
+  color: var(--paper);
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 600px) {
+  .challenge-header {
+    padding: 18px 5%;
+  }
+
+  .challenge-hero {
+    min-height: 470px;
+    padding: 75px 7%;
+  }
+
+  .challenge-intro,
+  .join-section,
+  .leaderboard-section {
+    padding: 65px 7%;
+  }
+}
+
+
+.weekly-report-section {
+  padding: 85px 7%;
+  background: #e7e9e2;
+  text-align: center;
+}
+
+.weekly-report-section h2 {
+  font-family: Georgia, serif;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.weekly-report-section p {
+  max-width: 600px;
+  margin: 15px auto;
+  color: #777d78;
+}
+
+.weekly-report-section .primary-button {
+  background: #151b1b;
+  color: #f3f1eb;
+}
+
+
+.how-it-works {
+  padding: 90px 7%;
+  background: #f3f1eb;
+}
+
+.section-heading {
+  max-width: 650px;
+  margin: 0 auto 45px;
+  text-align: center;
+}
+
+.section-heading .eyebrow {
+  color: #777d78;
+}
+
+.section-heading h2 {
+  font-family: Georgia, serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 400;
+  margin: 12px 0;
+}
+
+.section-heading > p:last-child {
+  color: #777d78;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.step-card {
+  padding: 30px 24px;
+  background: #e7e9e2;
+  min-height: 240px;
+}
+
+.step-number {
+  display: block;
+  margin-bottom: 28px;
+  color: #777d78;
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+}
+
+.step-card h3 {
+  font-family: Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.step-card p {
+  color: #777d78;
+  font-size: 0.95rem;
+}
+
+/* Desktop: four cards */
+.steps-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+/* Tablet: two cards */
+@media (max-width: 700px) {
+  .steps-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Mobile: one card */
+@media (max-width: 500px) {
+  .steps-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* Expandable information inside How It Works cards */
+
+.step-card {
+  position: relative;
+  padding: 30px 24px;
+  background: #e7e9e2;
+  min-height: 240px;
+}
+
+.step-info {
+  margin-top: 22px;
+}
+
+.step-info summary {
+  position: absolute;
+  top: 65px;
+  right: 18px;
+  width: 27px;
+  height: 27px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #777d78;
+  border-radius: 50%;
+  color: #555e58;
+  font-family: Georgia, serif;
+  font-size: 15px;
+  font-style: italic;
+  cursor: pointer;
+  list-style: none;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.step-info summary::-webkit-details-marker {
+  display: none;
+}
+
+.step-info summary:hover,
+.step-info[open] summary {
+  background: #151b1b;
+  color: #f3f1eb;
+}
+
+.step-info-content {
+  padding-top: 12px;
+  border-top: 1px solid rgba(119, 125, 120, 0.3);
+}
+
+.step-info-content p {
+  color: #555e58;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+
+.step-info-content p + p {
+  margin-top: 10px;
+}
+
+/* Keep information readable on smaller screens */
+
+@media (max-width: 850px) {
+  .step-card {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .how-it-works {
+    padding: 65px 6%;
+  }
+
+  .step-card {
+    padding: 25px 55px 25px 22px;
+    min-height: auto;
+  }
+
+  .step-info summary {
+    top: 22px;
+    right: 17px;
+  }
+
+  .step-info-content p {
+    font-size: 0.9rem;
+  }
+}
+
+/* How It Works - responsive card layout */
+
+/* Desktop: 4 cards in one row */
+@media screen and (min-width: 851px) {
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  }
+}
+
+/* Tablet: 2 cards per row */
+@media screen and (min-width: 501px) and (max-width: 850px) {
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+/* Phone: 1 card per row */
+@media screen and (max-width: 500px) {
+  .steps-grid {
+    display: grid;
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Header navigation links */
+.header-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.leaderboard-link {
+  display: inline-block;
+  padding: 10px 18px;
+  border: 1px solid var(--ink);
+  border-radius: 3px;
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 13px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.leaderboard-link:hover {
+  background: var(--ink);
+  color: #fff;
+}
+
+.back-link {
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 13px;
+  transition: opacity 0.2s ease;
+}
+
+.back-link:hover {
+  opacity: 0.6;
+}
+
+/* Mobile header */
+@media (max-width: 500px) {
+  .header-links {
+    gap: 12px;
+  }
+
+  .leaderboard-link {
+    padding: 8px 11px;
+    font-size: 12px;
+  }
+
+  .back-link {
+    font-size: 12px;
+  }
+}
+
+/* Leaderboard table */
+
+.leaderboard-table {
+  width: 100%;
+  max-width: 900px;
+  margin: 35px auto 0;
+  border-collapse: collapse;
+  background: #e7e9e2;
+  text-align: left;
+}
+
+.leaderboard-table th {
+  background: #151b1b;
+  color: #f3f1eb;
+  padding: 16px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.leaderboard-table td {
+  padding: 16px;
+  border-bottom: 1px solid #d1d5cd;
+  color: #171b1b;
+  font-size: 0.9rem;
+}
+
+.leaderboard-table tbody tr:hover {
+  background: #dce1d9;
+}
+
+@media (max-width: 600px) {
+  .leaderboard-table th,
+  .leaderboard-table td {
+    padding: 10px 7px;
+    font-size: 0.75rem;
+  }
+}
+
+/* Challenge countdown */
+.challenge-countdown {
+  margin: 35px auto;
+  text-align: center;
+}
+
+.countdown-label {
+  margin-bottom: 14px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.countdown-display {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.countdown-unit {
+  min-width: 75px;
+  color: #ffffff;
+}
+
+.countdown-unit span {
+  display: block;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #d6ded6;
+}
+
+.countdown-message {
+  margin-top: 16px;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+@media (max-width: 500px) {
+  .countdown-display {
+    gap: 8px;
+    font-size: 1.5rem;
+  }
+
+  .countdown-unit {
+    min-width: 60px;
+  }
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Shop the NICSTEPS collection of hoodies, sweatshirts, beanies, bags and winter essentials.">
+  <title>Shop All — NICSTEPS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="announcement">FREE SHIPPING · MADE TO ORDER · BUILT FOR THE JOURNEY</div>
+  <header class="site-header"><a class="wordmark" href="index.html">NIC<span>STEPS</span></a>
+    <nav class="desktop-nav"><a href="index.html">Home</a><a href="collection.html" class="active">Shop all</a><a href="index.html#story">Our story</a><a href="index.html#contact">Contact</a></nav>
+    <div class="header-actions"><a class="text-link desktop-shop-link" href="index.html">Back to home</a><button class="cart-trigger" onclick="toggleCart()">Basket <span id="cart-count">0</span></button><button class="menu-trigger" id="mobile-menu-toggle">☰</button></div>
+  </header>
+  <nav class="mobile-nav" id="mobile-menu"><a href="index.html">Home</a><a href="collection.html">Shop all</a><a href="index.html#story">Our story</a><a href="index.html#contact">Contact</a></nav>
+  <main>
+    <section class="collection-hero"><p class="eyebrow">THE NICSTEPS COLLECTION</p><h1>Find your <em>next step.</em></h1><p>Everyday staples, considered layers and a few limited-edition favourites.</p></section>
+    <section class="section collection-section">
+      <div class="collection-toolbar"><span id="product-count-label">THE COLLECTION</span><div class="filter-tabs" id="filter-tabs">
+  <button class="filter-tab active" data-filter="All">All</button>
+  <button class="filter-tab" data-filter="Hoodies">Hoodies</button>
+  <button class="filter-tab" data-filter="Sweatshirts">Sweatshirts</button>
+  <button class="filter-tab" data-filter="Accessories">Accessories</button>
+  <button class="filter-tab" data-filter="Limited Edition">Limited edition</button>
+  <button class="filter-tab" data-filter="Winter Edition">Winter edition</button>
+</div></div>
+      <div class="product-grid collection-grid" id="collection-products"></div>
+    </section>
+  </main>
+  <section class="contact-section" id="contact">
+    <p class="eyebrow">SAY HELLO</p>
+    <h2>Keep in <em>touch.</em></h2>
+    <p class="contact-email">Email: <a href="mailto:orders@nicsteps.co.uk">orders@nicsteps.co.uk</a></p>
+    <div class="social-links">
+      <a href="https://www.instagram.com/xnatural_nicx" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><img src="icons/instagram.svg" alt="Instagram"></a>
+      <a href="https://www.tiktok.com/@nicky32115" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><img src="icons/tiktok.svg" alt="TikTok"></a>
+      <a href="https://www.snapchat.com/@ncurrah" target="_blank" rel="noopener noreferrer" aria-label="Snapchat"><img src="icons/snapchat.svg" alt="Snapchat"></a>
+    </div>
+    <p class="support-text">Support my channels by subscribing ❤️</p>
+  </section>
+  
+  <footer class="site-footer"><div><a class="wordmark" href="index.html">NIC<span>STEPS</span></a><p>Daily walks. Daily life. Made for the journey.</p></div><div class="footer-links"><a href="mailto:orders@nicsteps.co.uk">Contact</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="returns.html">Returns</a><a href="shipping.html">Shipping</a></div><small>© 2026 NICSTEPS. All rights reserved.</small></footer>
+  <div class="overlay" id="overlay" onclick="closePanels()"></div>
+  <aside class="cart-drawer" id="cart-panel"><div class="drawer-head"><div><p class="eyebrow">YOUR SELECTION</p><h2>Your basket</h2></div><button class="icon-button" onclick="toggleCart()">×</button></div><div id="cart-items" class="cart-lines"><p class="empty-state">Your basket is waiting for its first find.</p></div>
+    <div class="drawer-bottom"><div class="tip-card"><div class="tip-heading"><strong>Support NIC <span>♡</span></strong><small>Optional contribution</small></div><div class="tip-buttons"><button class="tip-btn" data-tip="5">5%</button><button class="tip-btn" data-tip="10">10%</button><button class="tip-btn" data-tip="15">15%</button></div><div class="custom-tip"><label for="customTip">Custom %</label><input id="customTip" type="number" min="1" max="100" placeholder="e.g. 7"><button id="applyCustomTip" class="small-button">Apply</button></div><p class="tip-total">Your tip: <strong id="tipAmountDisplay">£0.00</strong></p><button id="removeTipBtn" class="remove-tip">Remove tip</button><small class="tip-note">Tips are optional and non-refundable.</small></div><div class="subtotal-row"><span>Order total</span><strong id="cart-total">£0.00</strong></div><button class="button button-light full-width" onclick="openCheckout()">Continue to checkout <span>→</span></button><p class="secure-note">Secure payment powered by Stripe</p></div>
+  </aside>
+  <div class="modal" id="product-modal" role="dialog" aria-modal="true"><button class="icon-button modal-close" onclick="closeProductModal()">×</button><div class="modal-image"><img id="modal-image" src="" alt=""></div><div class="modal-content"><p class="eyebrow" id="modal-category"></p><h2 id="modal-title"></h2><p class="modal-price" id="modal-price"></p><label for="opt-color">Colour</label><select id="opt-color"></select><label for="opt-size">Size</label><select id="opt-size"></select><button class="button button-dark full-width" onclick="addSelected()">Add to basket</button><p class="modal-note">Made to order. Colour may vary slightly from screen to screen.</p></div></div>
+  <div class="modal checkout-modal" id="checkout-form" role="dialog" aria-modal="true"><button class="icon-button modal-close" onclick="closeCheckout()">×</button><p class="eyebrow">SECURE CHECKOUT</p><h2>Almost yours.</h2><p class="checkout-intro">Enter your email to continue. Stripe will securely collect your delivery and payment details.</p><label for="cust-email">Email address</label><input type="email" id="cust-email" placeholder="you@example.com" autocomplete="email" required><button class="button button-dark full-width" onclick="startCheckout()">Continue to payment →</button><p class="secure-note">Your payment details are handled securely by Stripe.</p></div>
+  <script src="products.js"></script><script src="script.js"></script>
+</body></html>

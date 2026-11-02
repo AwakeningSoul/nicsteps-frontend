@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="NICSTEPS — apparel and accessories inspired by daily walks and everyday journeys.">
+  <title>NICSTEPS — Made for Every Step</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="announcement">FREE SHIPPING · MADE TO ORDER · BUILT FOR THE JOURNEY</div>
+  <header class="site-header">
+    <a class="wordmark" href="index.html">NIC<span>STEPS</span></a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="index.html" class="active">Home</a><a href="collection.html">Shop all</a><a href="#story">Our story</a><a href="#contact">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <a class="text-link desktop-shop-link" href="collection.html">Explore collection</a>
+      <button class="cart-trigger" type="button" onclick="toggleCart()" aria-label="Open basket">Basket <span id="cart-count">0</span></button>
+      <button class="menu-trigger" id="mobile-menu-toggle" type="button" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+  <nav class="mobile-nav" id="mobile-menu"><a href="index.html">Home</a><a href="collection.html">Shop all</a><a href="#story">Our story</a><a href="#contact">Contact</a></nav>
+
+  <main>
+    <section class="hero hero-home">
+      <div class="hero-copy">
+        <p class="eyebrow">EVERY STEP TELLS A STORY</p>
+        <h1>Made for the<br><em>everyday journey.</em></h1>
+        <p class="hero-description">Thoughtful pieces for the miles you walk, the moments you make, and everything in between.</p>
+        <a class="button button-light" href="collection.html">Shop the collection <span>↗</span></a>
+      </div>
+      <div class="hero-art">
+        <div class="hero-art-orbit"></div>
+        <div class="hero-art-label">NICSTEPS<br><small>EST. 2026</small></div>
+        <div class="hero-art-caption">MOVE WITH MEANING.</div>
+      </div>
+    </section>
+
+    <section class="challenge-callout">
+      <div class="challenge-callout-copy">
+        <p class="eyebrow">NICSTEPS COMMUNITY</p>
+        <h2>28 Day <em>Healthy Steps</em> Challenge</h2>
+        <p>Small steps. Steady progress. Stronger habits. Join our community and make every step count.</p>
+        <a class="button button-dark" href="challenge.html">
+          Discover the challenge ↗
+        </a>
+      </div>
+      <div class="challenge-callout-mark">
+        28<span>DAYS</span>
+      </div>
+    </section>
+
+    
+    <section class="intro-strip">
+      <span>01 / THE NICSTEPS EDIT</span>
+      <p>Comfort in every layer. Confidence in every step.</p>
+      <span>DESIGNED FOR REAL LIFE</span>
+    </section>
+
+    <section class="section featured-section">
+      <div class="section-heading">
+        <div><p class="eyebrow">THE SEASONAL EDIT</p><h2>Featured pieces</h2></div>
+        <a class="underlined-link" href="collection.html">View all products ↗</a>
+      </div>
+      <div class="product-grid feature-grid" id="featured-products"></div>
+    </section>
+
+    <section class="winter-callout">
+      <div class="winter-copy"><p class="eyebrow">LAYER UP. GET OUT THERE.</p><h2>Winter, <em>your way.</em></h2><p>Soft layers and everyday essentials for colder days and longer walks.</p><a class="button button-dark" href="collection.html">Explore winter essentials ↗</a></div>
+      <div class="winter-mark">N<span>/</span>S</div>
+    </section>
+
+    <section class="story-section section" id="story">
+      <p class="eyebrow">A LITTLE ABOUT US</p><h2>It starts with<br><em>one more step.</em></h2>
+      <p>NICSTEPS is inspired by Nic’s daily walks, her life, and the moments she shares with her community. We create limited drops and everyday pieces that celebrate showing up, finding your pace, and enjoying the journey.</p>
+      <a class="underlined-link" href="collection.html">Find your next favourite ↗</a>
+    </section>
+  </main>
+
+  <section class="contact-section" id="contact">
+    <p class="eyebrow">SAY HELLO</p>
+    <h2>Keep in <em>touch.</em></h2>
+    <p class="contact-email">Email: <a href="mailto:orders@nicsteps.co.uk">orders@nicsteps.co.uk</a></p>
+    <div class="social-links">
+      <a href="https://www.instagram.com/xnatural_nicx" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><img src="icons/instagram.svg" alt="Instagram"></a>
+      <a href="https://www.tiktok.com/@nicky32115" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><img src="icons/tiktok.svg" alt="TikTok"></a>
+      <a href="https://www.snapchat.com/@ncurrah" target="_blank" rel="noopener noreferrer" aria-label="Snapchat"><img src="icons/snapchat.svg" alt="Snapchat"></a>
+    </div>
+    <p class="support-text">Support my channels by subscribing ❤️</p>
+  </section>
+  
+  <footer class="site-footer">
+    <div><a class="wordmark" href="index.html">NIC<span>STEPS</span></a><p>Daily walks. Daily life. Made for the journey.</p></div>
+    <div class="footer-links"><a href="mailto:orders@nicsteps.co.uk">Contact</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="returns.html">Returns</a><a href="shipping.html">Shipping</a></div>
+    <small>© 2026 NICSTEPS. All rights reserved.</small>
+  </footer>
+
+  <div class="overlay" id="overlay" onclick="closePanels()"></div>
+  <aside class="cart-drawer" id="cart-panel" aria-label="Shopping basket">
+    <div class="drawer-head"><div><p class="eyebrow">YOUR SELECTION</p><h2>Your basket</h2></div><button class="icon-button" onclick="toggleCart()" aria-label="Close basket">×</button></div>
+    <div id="cart-items" class="cart-lines"><p class="empty-state">Your basket is waiting for its first find.</p></div>
+    <div class="drawer-bottom">
+      <div class="tip-card"><div class="tip-heading"><strong>Support NIC <span>♡</span></strong><small>Optional contribution</small></div>
+        <div class="tip-buttons"><button class="tip-btn" data-tip="5">5%</button><button class="tip-btn" data-tip="10">10%</button><button class="tip-btn" data-tip="15">15%</button></div>
+        <div class="custom-tip"><label for="customTip">Custom %</label><input id="customTip" type="number" min="1" max="100" placeholder="e.g. 7"><button id="applyCustomTip" class="small-button">Apply</button></div>
+        <p class="tip-total">Your tip: <strong id="tipAmountDisplay">£0.00</strong></p><button id="removeTipBtn" class="remove-tip">Remove tip</button>
+        <small class="tip-note">Tips are optional and non-refundable.</small>
+      </div>
+      <div class="subtotal-row"><span>Order total</span><strong id="cart-total">£0.00</strong></div>
+      <button class="button button-light full-width" onclick="openCheckout()">Continue to checkout <span>→</span></button>
+      <p class="secure-note">Secure payment powered by Stripe</p>
+    </div>
+  </aside>
+
+  <div class="modal" id="product-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <button class="icon-button modal-close" onclick="closeProductModal()" aria-label="Close">×</button>
+    <div class="modal-image"><img id="modal-image" src="" alt=""></div>
+    <div class="modal-content"><p class="eyebrow" id="modal-category"></p><h2 id="modal-title"></h2><p class="modal-price" id="modal-price"></p>
+      <label for="opt-color">Colour</label><select id="opt-color"></select>
+      <label for="opt-size">Size</label><select id="opt-size"></select>
+      <button class="button button-dark full-width" id="add-to-cart-button" onclick="addSelected()">Add to basket</button>
+      <p class="modal-note">Made to order. Colour may vary slightly from screen to screen.</p>
+    </div>
+  </div>
+
+  <div class="modal checkout-modal" id="checkout-form" role="dialog" aria-modal="true" aria-labelledby="checkout-title">
+    <button class="icon-button modal-close" onclick="closeCheckout()" aria-label="Close">×</button>
+    <p class="eyebrow">SECURE CHECKOUT</p><h2 id="checkout-title">Almost yours.</h2><p class="checkout-intro">Enter your email to continue. Stripe will securely collect your delivery and payment details.</p>
+    <label for="cust-email">Email address</label><input type="email" id="cust-email" placeholder="you@example.com" autocomplete="email" required>
+    <button class="button button-dark full-width" onclick="startCheckout()">Continue to payment →</button>
+    <p class="secure-note">Your payment details are handled securely by Stripe.</p>
+  </div>
+
+  <script src="products.js"></script><script src="script.js"></script>
+</body>
+</html>

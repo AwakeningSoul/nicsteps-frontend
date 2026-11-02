@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Thank you — NICSTEPS</title><link rel="stylesheet" href="style.css"></head>
+<body><main class="collection-hero" style="min-height:75vh;display:flex;flex-direction:column;justify-content:center;align-items:center"><p class="eyebrow">NICSTEPS · ORDER RECEIVED</p><h1>Thank you for<br><em>your order.</em></h1><p>Your payment has been completed. We’ll send your order confirmation by email shortly.</p><a class="button button-dark" style="margin-top:28px" href="collection.html">Continue shopping ↗</a></main>
+<script>
+  // Fulfilment is handled once by the Stripe webhook on the backend.
+  // Do not call /create-order here: doing so would create a duplicate Printful order.
+  localStorage.removeItem("nicstepsBasketV2");
+  localStorage.removeItem("nicstepsTipPercent");
+</script></body></html>
