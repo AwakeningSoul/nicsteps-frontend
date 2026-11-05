@@ -10,8 +10,35 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <div class="announcement">FREE SHIPPING · MADE TO ORDER · BUILT FOR THE JOURNEY</div>
+  <!-- Limited-time NICSTEPS promotion -->
+  <div class="promo-banner" id="nic20-promo" hidden>
+    <span class="promo-message">
+      LIMITED TIME · 20% OFF YOUR ORDER
+    </span>
+
+    <span class="promo-offer">
+      Use code <strong>NIC20</strong> at checkout
+    </span>
+
+    <button
+      class="promo-copy"
+      type="button"
+      onclick="copyNic20(this)"
+      aria-label="Copy discount code NIC20"
+    >
+      Copy code
+    </button>
+
+    <span class="promo-expiry">
+      Ends 8 November
+    </span>
+  </div>
+
+  <div class="announcement">
+    FREE SHIPPING · MADE TO ORDER · BUILT FOR THE JOURNEY
+  </div>
   <header class="site-header">
     <a class="wordmark" href="index.html">NIC<span>STEPS</span></a>
     <nav class="desktop-nav" aria-label="Main navigation">
