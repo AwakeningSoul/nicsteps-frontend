@@ -268,3 +268,39 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("opt-color")?.addEventListener("change", () => { updateSizeOptions(); updateModalImage(); });
   document.addEventListener("keydown", event => { if (event.key === "Escape") closePanels(); });
 });
+/* NICSTEPS — NIC20 limited-time promotion */
+
+// Offer ends 8 November 2026 at 11:59 PM GMT.
+// The end time is exclusive.
+const NIC20_END = Date.parse("2026-11-08T23:59:00Z");
+
+function updateNic20Promotion() {
+  const banner = document.getElementById("nic20-promo");
+  if (!banner) return;
+
+  banner.hidden = Date.now() >= NIC20_END;
+}
+
+async function copyNic20(button) {
+  try {
+    await navigator.clipboard.writeText("NIC20");
+
+    button.textContent = "Copied!";
+    setTimeout(() => {
+      button.textContent = "Copy code";
+    }, 2000);
+  } catch (error) {
+    // Manual fallback if clipboard access is unavailable.
+    window.prompt("Copy your discount code:", "NIC20");
+  }
+}
+
+updateNic20Promotion();
+
+// Recheck periodically and when visitors return to the tab.
+setInterval(updateNic20Promotion, 30000);
+document.addEventListener(
+  "visibilitychange",
+  updateNic20Promotion
+);
+
