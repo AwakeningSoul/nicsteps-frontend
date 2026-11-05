@@ -192,3 +192,71 @@ function updateChallengeAccess() {
 
 updateChallengeAccess();
 setInterval(updateChallengeAccess, 1000);
+
+
+/* =========================================
+   NICSTEPS Infographic — Tap to Enlarge
+   ========================================= */
+
+function setupChallengeImageViewer() {
+  const openButton = document.getElementById("challenge-image-open");
+  const modal = document.getElementById("challenge-image-modal");
+  const closeButton = document.getElementById("challenge-image-close");
+
+  // Do nothing if the infographic isn't on this page.
+  if (!openButton || !modal || !closeButton) return;
+
+  const scrollArea = modal.querySelector(".challenge-modal-scroll");
+  let previousFocus = null;
+
+  function openImage() {
+    previousFocus = document.activeElement;
+
+    modal.classList.add("is-open");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("challenge-modal-active");
+
+    if (scrollArea) {
+      scrollArea.scrollTop = 0;
+      scrollArea.scrollLeft = 0;
+    }
+
+    closeButton.focus();
+  }
+
+  function closeImage() {
+    modal.classList.remove("is-open");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("challenge-modal-active");
+
+    if (previousFocus) {
+      previousFocus.focus();
+    }
+  }
+
+  openButton.addEventListener("click", openImage);
+  closeButton.addEventListener("click", closeImage);
+
+  modal.addEventListener("click", (event) => {
+    if (event.target === modal || event.target === scrollArea) {
+      closeImage();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (!modal.classList.contains("is-open")) return;
+
+    if (event.key === "Escape") {
+      closeImage();
+    }
+
+    // Keep keyboard focus on the close button.
+    if (event.key === "Tab") {
+      event.preventDefault();
+      closeButton.focus();
+    }
+  });
+}
+
+setupChallengeImageViewer();
+
