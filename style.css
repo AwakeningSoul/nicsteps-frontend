@@ -69,3 +69,90 @@ html{scroll-behavior:smooth}body{background:var(--paper);color:var(--ink);font-f
     font-size: 5rem;
   }
 }
+
+
+/* NICSTEPS — Limited-time 20% promotion */
+
+.promo-banner[hidden] {
+  display: none !important;
+}
+
+.promo-banner {
+  background: #dce8dd;
+  color: #17201f;
+  padding: 11px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 9px 18px;
+  text-align: center;
+  border-bottom: 1px solid #b7c9ba;
+  font-family: "DM Sans", sans-serif;
+}
+
+.promo-message {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .1em;
+}
+
+.promo-offer {
+  font-size: 12px;
+}
+
+.promo-offer strong {
+  font-weight: 800;
+  letter-spacing: .08em;
+}
+
+.promo-copy {
+  background: #17201f;
+  color: #ffffff;
+  border: 0;
+  border-radius: 3px;
+  padding: 8px 13px;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+.promo-copy:hover {
+  background: #354a40;
+}
+
+.promo-copy:focus-visible {
+  outline: 2px solid #17201f;
+  outline-offset: 3px;
+}
+
+.promo-expiry {
+  font-size: 10px;
+  color: #52645b;
+}
+
+@media (max-width: 620px) {
+  .promo-banner {
+    padding: 12px 14px;
+    gap: 7px 12px;
+  }
+
+  .promo-message {
+    width: 100%;
+    font-size: 10px;
+  }
+
+  .promo-offer {
+    font-size: 11px;
+  }
+
+  .promo-copy {
+    padding: 7px 11px;
+  }
+
+  .promo-expiry {
+    width: 100%;
+    font-size: 9px;
+  }
+}
