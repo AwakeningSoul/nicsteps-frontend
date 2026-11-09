@@ -157,7 +157,7 @@ function updateChallengeAccess() {
   const now = new Date();
 
   const registrationOpens = new Date("2026-11-09T00:00:00Z");
-  const reportsOpen = new Date("2026-11-16T00:00:00Z");
+  const reportsOpen = new Date("2026-11-15T00:00:00Z");
   const reportingCloses = new Date("2026-12-14T00:00:00Z");
 
   function setLinkAccess(link, isOpen, closedMessage) {
@@ -186,7 +186,7 @@ function updateChallengeAccess() {
   setLinkAccess(
     weeklyReportLink,
     now >= reportsOpen && now < reportingCloses,
-    "Weekly reports open on 16 November 2026 and close on 14 December 2026."
+    "Weekly reports open on 15 November 2026 and close on 14 December 2026."
   );
 }
 
