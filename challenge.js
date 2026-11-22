@@ -99,7 +99,7 @@ const reportingDeadline = new Date("2026-12-14T00:00:00Z");
 
 function updateChallengeCountdown() {
   const countdown = document.getElementById("challenge-countdown");
-  const label = document.querySelector(".countdown-label");
+  const label = document.querySelector(".challenge-countdown .countdown-label");
   const message = document.getElementById("countdown-message");
 
   if (!countdown || !label || !message) return;
