@@ -260,3 +260,35 @@ function setupChallengeImageViewer() {
 
 setupChallengeImageViewer();
 
+
+/* =========================================
+   NICSTEPS Prize Draw Countdown
+   ========================================= */
+
+const prizeDrawDeadline = new Date("2026-12-13T18:00:00Z");
+
+function updatePrizeDrawCountdown() {
+  const timer = document.getElementById("prize-draw-timer");
+
+  if (!timer) return;
+
+  const now = new Date();
+  const difference = prizeDrawDeadline - now;
+
+  if (difference <= 0) {
+    timer.textContent = "Entries closed";
+    return;
+  }
+
+  const days = Math.floor(difference / 86400000);
+  const hours = Math.floor((difference / 3600000) % 24);
+  const minutes = Math.floor((difference / 60000) % 60);
+  const seconds = Math.floor((difference / 1000) % 60);
+
+  timer.textContent =
+    `${days}d ${hours}h ${minutes}m ${seconds}s`;
+}
+
+updatePrizeDrawCountdown();
+setInterval(updatePrizeDrawCountdown, 1000);
+
