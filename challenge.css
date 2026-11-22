@@ -713,3 +713,117 @@ body.challenge-modal-active {
     transition: none;
   }
 }
+
+
+/* =========================================
+   NICSTEPS FINAL PRIZE DRAW
+   ========================================= */
+
+.prize-draw-section {
+  padding: 85px 6%;
+  background: #f3f1eb;
+  color: #151b1b;
+  text-align: center;
+}
+
+.prize-draw-section .section-heading {
+  max-width: 700px;
+  margin: 0 auto 40px;
+}
+
+.prize-draw-section .section-heading h2 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  margin: 12px 0 18px;
+}
+
+.prize-draw-section .section-heading p {
+  line-height: 1.7;
+}
+
+/* Countdown */
+
+.prize-draw-countdown {
+  max-width: 760px;
+  margin: 0 auto 30px;
+  padding: 35px 24px;
+  border-radius: 18px;
+  background: #151b1b;
+  color: #fff;
+}
+
+.prize-draw-countdown .countdown-label {
+  color: #b6d4bb;
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+#prize-draw-timer {
+  margin: 20px 0;
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.prize-draw-countdown > p:last-child {
+  color: #dce1d9;
+  font-size: 0.9rem;
+}
+
+/* Prizes and entries */
+
+.prize-draw-rewards,
+.prize-draw-entries {
+  max-width: 760px;
+  margin: 0 auto 30px;
+  padding: 35px 25px;
+  background: #fff;
+  border: 1px solid #dce1d9;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(21, 27, 27, 0.05);
+}
+
+.prize-draw-rewards h3,
+.prize-draw-entries h3 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.prize-draw-rewards p,
+.prize-draw-entries p {
+  margin: 12px 0;
+  line-height: 1.7;
+}
+
+#prize-draw-entry-list {
+  margin-top: 25px;
+}
+
+.prize-draw-note {
+  max-width: 650px;
+  margin: 25px auto 0;
+  color: #526258;
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+  .prize-draw-section {
+    padding: 60px 5%;
+  }
+
+  .prize-draw-countdown,
+  .prize-draw-rewards,
+  .prize-draw-entries {
+    padding: 28px 18px;
+    border-radius: 12px;
+  }
+
+  #prize-draw-timer {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+  }
+}
+
