@@ -292,3 +292,86 @@ function updatePrizeDrawCountdown() {
 updatePrizeDrawCountdown();
 setInterval(updatePrizeDrawCountdown, 1000);
 
+
+/* =========================================
+   NICSTEPS Prize Draw Ticket List
+   ========================================= */
+
+async function loadPrizeDrawEntries() {
+  const container = document.getElementById(
+    "prize-draw-entry-list"
+  );
+
+  if (!container) return;
+
+  try {
+    const response = await fetch(
+      `${API_BASE}/api/challenge/prize-draw/entries`
+    );
+
+    if (!response.ok) {
+      throw new Error("Unable to load prize draw entries.");
+    }
+
+    const data = await response.json();
+
+    if (!data.success || !Array.isArray(data.entries)) {
+      throw new Error("Invalid prize draw response.");
+    }
+
+    container.replaceChildren();
+
+    if (data.entries.length === 0) {
+      container.textContent =
+        "No verified prize draw entries yet.";
+      return;
+    }
+
+    const table = document.createElement("table");
+    table.className = "leaderboard-table";
+
+    const thead = document.createElement("thead");
+    const headerRow = document.createElement("tr");
+
+    ["Nickname", "Prize Draw Tickets"].forEach(heading => {
+      const th = document.createElement("th");
+      th.textContent = heading;
+      headerRow.appendChild(th);
+    });
+
+    thead.appendChild(headerRow);
+    table.appendChild(thead);
+
+    const tbody = document.createElement("tbody");
+
+    data.entries.forEach(participant => {
+      const row = document.createElement("tr");
+
+      const nickname = document.createElement("td");
+      nickname.textContent = participant.nickname;
+
+      const tickets = document.createElement("td");
+      tickets.textContent = `${participant.tickets} / 4`;
+
+      row.appendChild(nickname);
+      row.appendChild(tickets);
+      tbody.appendChild(row);
+    });
+
+    table.appendChild(tbody);
+    container.appendChild(table);
+
+  } catch (error) {
+    console.error("Prize draw entries error:", error);
+
+    container.textContent =
+      "Prize draw entries are temporarily unavailable.";
+  }
+}
+
+loadPrizeDrawEntries();
+
+// Refresh ticket counts every 60 seconds
+setInterval(loadPrizeDrawEntries, 60000);
+
+
